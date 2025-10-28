@@ -55,7 +55,7 @@ class MyNode(Node):
         self.declare_parameter("num_nodes", 1)
         self.declare_parameter("comm_radius", 2.0)
         self.declare_parameter('sigma', 0.25)   # Consensus step size for the average graph.
-        self.declare_parameter('num_consensus_steps', 75)
+        self.declare_parameter('num_consensus_steps', 50)
 
         self.num_nodes = self.get_parameter("num_nodes").get_parameter_value().integer_value
         self.communication_radius = self.get_parameter("comm_radius").get_parameter_value().double_value
