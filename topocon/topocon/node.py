@@ -36,7 +36,7 @@ fresh_qos = rclpy.qos.QoSProfile(
 class MyNode(Node):
 
     def __init__(self):
-        super().__init__('gnn_node')
+        super().__init__('adaptive_node')
 
         # Unique identifier for the node. # DOC: We assume all nodes have the same format of the name.
         self.node_name = self.get_namespace().strip("/")
@@ -53,7 +53,7 @@ class MyNode(Node):
 
         # Load parameters
         self.declare_parameter("num_nodes", 1)
-        self.declare_parameter("comm_radius", 2.0)
+        self.declare_parameter("comm_radius", 0.8)
         self.declare_parameter('sigma', 0.25)   # Consensus step size for the average graph.
         self.declare_parameter('num_consensus_steps', 50)
 
